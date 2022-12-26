@@ -424,6 +424,19 @@ public final class ListView extends AndroidViewComponent implements AdapterView.
   }
 
   /**
+   */
+   @SimpleFunction(
+      description = "Removes Item from list at a given idnex")
+    public void RemoveItemAtIndex(int index) {
+      if (!dictItems.isEmpty()) {
+        dictItems.remove(index);
+      } else {
+        stringItems.remove(index);
+      }
+      setAdapterData();
+    }
+
+  /**
    * Returns the text in the `ListView` at the position of {@link #SelectionIndex(int)}.
    */
   @SimpleProperty(description = "Returns the text last selected in the ListView.",
